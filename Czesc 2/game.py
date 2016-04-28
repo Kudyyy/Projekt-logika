@@ -3,8 +3,11 @@
 import sys, os, random, time
 
 
-rules = """Zasady sa proste, dostajesz zadanie i je wykonujesz!
-Zostanie ci podany warunek logiczny a ty masz odpowiedziec jaki jest jego wynik.\n
+rules = """Zasady sa proste !
+Rozwiazujesz zadanie i dostajesz jeden punkt.
+Jesli odpowiesz zle przegrywasz odrazu.
+Jesli odpowiesz kompletnie bezsensu pozwole ci grac dalej ale zabiore ci 5 pkt !
+Uwazaj ! Nie mozesz zejsc z punktami ponizej zera bo przegrasz !\n
 Wiec do rzeczy! Gramy?  (Odpowiedz tak/nie)\n"""
 badAnswer = """Widze ze odpowiedz na proste pytanie sprawia ci trudnosc
 wiec zmierzenie sie z wyzwaniem jakim jest ta gra
@@ -216,8 +219,7 @@ def playLevels(a,b):
                     time.sleep(1)
                     return False
             else:
-                print "Nie mozesz tak odpowiedziec !"
-                print "Niestety ta gra nie wybacza takich bledow... -5 pkt !"
+                print "Bezsensowna odpowiedz ! -5 pkt !"
                 time.sleep(3)
                 points -= 5
             clearScreen()
