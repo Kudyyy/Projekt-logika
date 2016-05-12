@@ -31,6 +31,7 @@ points = 0
 def inpOption(key,value):
     assert (key in availableOptions),"Nie istnieje taka opcja: "+key
     assert (value in mandatoryFilesName), "Niedozwolona nazwa pliku, mozliwe nazwy to: and.txt not.txt impl.txt or.txt"
+    assert (key not in files.keys()),"Nie wolno uzyc tej samej opcji dwa razy"
     files[key]=value
     numberOfLanes[key]=0
     return
